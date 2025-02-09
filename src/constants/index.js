@@ -1,8 +1,8 @@
 import GGG from "../assets/projects/consume.png";
 import EdgeHacks from "../assets/projects/edgeHacks.png";
 import EdgeHacks2 from "../assets/projects/EdgeHacks2.png";
-import Timer1 from "../assets/projects/Timer1.png";
-import Timer2 from "../assets/projects/Timer2.png";
+import Timer1 from "../assets/projects/timer1.png";
+import Timer2 from "../assets/projects/timer2.png";
 import Moti1 from "../assets/projects/MotiQuo1.png";
 import Moti2 from "../assets/projects/MotiQuo2.png";
 
