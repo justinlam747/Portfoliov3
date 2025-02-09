@@ -34,10 +34,9 @@ const Projects = () => {
     };
   }, []);
 
-  // Animation variants for slide-up (without fading)
   const variants = {
-    hidden: { y: 50 },
-    visible: { y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
   };
 
   return (
@@ -83,6 +82,7 @@ const Projects = () => {
               }`}
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
                 <h3 className={`text-4xl font-bold mb-4 ${textColor}`}>

@@ -30,10 +30,17 @@ const App = () => {
 
       {currentScreen === "project" && (
         <>
+          {/* <BackHome setCurrentScreen={setCurrentScreen} /> */}
           <Navbar setCurrentScreen={setCurrentScreen} />
           <Projects />
         </>
       )}
+
+      {/* {currentScreen === "grid" && (
+        <>
+          <Navbar setCurrentScreen={setCurrentScreen} />
+        </>
+      )} */}
     </>
   );
 };
