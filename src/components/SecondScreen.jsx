@@ -64,7 +64,7 @@ const SecondScreen = () => {
                 style={{ zIndex: 10 }}
               >
                 <img
-                  src="./src/assets/projects/photoID.png"
+                  src="./src/assets/projects/timer1.png"
                   alt="Profile"
                   className="rounded-full p-1"
                 />
