@@ -4,9 +4,9 @@
 @tailwind utilities;
 
 :root {
-  font-family: Schibsted Grotesk;
+  font-family: "Schibsted Grotesk";
   overflow-x: hidden;
-  /* Prevents "bounce" on iOS */
+
   touch-action: manipulation; /* Limits touch actions like zooming */
 
   scroll-behavior: smooth;
