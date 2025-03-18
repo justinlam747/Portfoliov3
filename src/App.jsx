@@ -1,47 +1,35 @@
-// App.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import FirstScreen from "./components/FirstScreen";
-import SecondScreen from "./components/SecondScreen";
-import ThirdScreen from "./components/ThirdScreen";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Projects from "./components/Projects";
-import BackHome from "./components/BackHome";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  const [currentScreen, setCurrentScreen] = useState("home");
+  const workRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(entry.isIntersecting);
+      },
+      { rootMargin: "-50px 0px 0px 0px", threshold: 0.1 }
+    );
+
+    if (workRef.current) {
+      observer.observe(workRef.current);
+    }
+
+    return () => {
+      if (workRef.current) observer.unobserve(workRef.current);
+    };
   }, []);
 
   return (
-    <>
-      {currentScreen === "home" && (
-        <div>
-          <Navbar setCurrentScreen={setCurrentScreen} />
-          <FirstScreen />
-          <SecondScreen />
-
-          <ThirdScreen setCurrentScreen={setCurrentScreen} />
-          <Footer />
-        </div>
-      )}
-
-      {currentScreen === "project" && (
-        <>
-          {/* <BackHome setCurrentScreen={setCurrentScreen} /> */}
-          <Navbar setCurrentScreen={setCurrentScreen} />
-          <Projects />
-        </>
-      )}
-
-      {/* {currentScreen === "grid" && (
-        <>
-          <Navbar setCurrentScreen={setCurrentScreen} />
-        </>
-      )} */}
-    </>
+    <div className="bg-black">
+      <Navbar isScrolled={isScrolled} />
+      <FirstScreen />
+      <Projects refProp={workRef} />
+    </div>
   );
 };
 

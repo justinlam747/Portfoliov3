@@ -1,124 +1,44 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import Card from "./Card.jsx";
 import { PROJECTS } from "../constants/index.js";
+import { FaCompass } from "react-icons/fa";
 
-const Projects = () => {
-  const [activeProject, setActiveProject] = useState(0);
-  const projectRefs = useRef([]);
-
-  const bgColors = ["#000000", "#F8FFF4", "#facc15", "#3b82f6"];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"));
-            setActiveProject(index);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    projectRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      projectRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } },
-  };
-
+const Projects = ({ refProp }) => {
   return (
-    <motion.div
-      animate={{ backgroundColor: bgColors[activeProject] }}
-      transition={{ duration: 0.5 }}
-      className="snap-y snap-proximity overflow-y-scroll scroll-smooth h-screen"
-    >
-      {PROJECTS.map((project, index) => {
-        const isEven = index % 2 === 0;
-        let textColor = "";
-        switch (index) {
-          case 0:
-            textColor = "text-white";
-            break;
-          case 1:
-            textColor = "text-black";
-            break;
-          case 2:
-            textColor = "text-black";
-            break;
-          case 3:
-            textColor = "text-white";
-            break;
-          default:
-            textColor = isEven ? "text-white" : "text-black";
-        }
+    <div className=" bg-black flex " id="work" ref={refProp}>
+      <div className="text-white h-full w-full px-10  ">
+        <div className="flex flex-col items-start gap-8">
+          <h1 className="text-6xl font-extrabold tracking-tight pt-28 text-white">
+            PROJECTS
+          </h1>
 
-        return (
-          <motion.section
-            key={index}
-            ref={(el) => (projectRefs.current[index] = el)}
-            data-index={index}
-            variants={variants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
-            className="snap-start h-screen flex items-center"
-          >
-            <a
-              className={`w-full max-w-6xl mx-auto flex flex-col md:flex-row ${
-                isEven ? "" : "md:flex-row-reverse"
-              }`}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="w-full md:w-1/2 flex flex-col justify-center p-8">
-                <h3 className={`text-4xl font-bold mb-4 ${textColor}`}>
-                  {project.title}
-                </h3>
-                <p className={`text-xl mb-4 ${textColor}`}>
-                  {project.description}
-                </p>
-                <p className={`mb-2 ${textColor}`}>
-                  {project.date} {project.institution}
-                </p>
-                <div className="mb-2">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className={`mr-2 inline-block ${textColor}`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <p className={`text-sm ${textColor}`}>{project.skills}</p>
-              </div>
-
-              <div className="w-full md:w-1/2 flex justify-center items-center p-8 h-full">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full md:h-full"
-                />
-              </div>
+          <div href="">
+            <a className="flex gap-3 bg-red-600 hover:bg-red-700 ease-in-out duration-300 p-4 rounded-xl select-none">
+              <FaCompass className="size-5 mt-1" />
+              <h1 className="text-xl font-bold tracking-wide">RESUME</h1>
             </a>
-          </motion.section>
-        );
-      })}
-    </motion.div>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center items-center min-h-screen pb-28 overflow-hidden">
+          <div className="flex flex-col items-center justify-center mt-[9rem]">
+            <div className="flex grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-2 ">
+              {PROJECTS.map((project, index) => (
+                <a href={project.link} target="_blank">
+                  <Card
+                    key={index}
+                    image={project.image}
+                    title={project.title}
+                    subtitle={project.description}
+                    color={project.color}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

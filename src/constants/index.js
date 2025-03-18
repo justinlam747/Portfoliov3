@@ -5,6 +5,10 @@ import Timer1 from "../assets/projects/timer1.png";
 import Timer2 from "../assets/projects/timer2.png";
 import Moti1 from "../assets/projects/MotiQuo1.png";
 import Moti2 from "../assets/projects/MotiQuo2.png";
+import Plant from "../assets/projects/Plant.png";
+import ClashRoyale from "../assets/projects/ClashRoyaleRender.png";
+import Batman from "../assets/projects/BatmanRender.png";
+import Gru from "../assets/projects/GruRender.png";
 
 export const HERO_CONTENT = `Engineering Student at Queens University `;
 
@@ -13,7 +17,7 @@ export const EXPERIENCES = [
     year: "2023 - Present",
     role: "Web Dev",
     company: "Glazing Gorilla Games",
-    description: `Developed and maintained a responsive company website for Glazing Gorilla Games, an acquisition company with 2+ million players monthly and 70+ million media views`,
+    description: `Landing Page`,
     technologies: ["Javascript", "React.js", "Tailwind", "html"],
   },
   {
@@ -34,11 +38,19 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "WaterYouDoing",
+    image: Plant,
+
+    description: "MakeUoft12 Hackathon",
+    technologies: ["HTML", "CSS"],
+    link: "https://devpost.com/software/wateryoudoing-cjnzhp",
+    date: "2023",
+  },
+  {
     title: "MotiQuo",
     image: Moti1,
     image2: Moti2,
-    description:
-      "MotiQuo is a React-based app that fetches random motivational quotes from the ZenQuotes API with both manual and automatic refresh options. Its responsive design delivers a streamlined user experience across all devices.",
+    description: "Motivational Quote Generator",
     technologies: ["React", "Tailwind", "Vite", "ZenQuotesAPI"],
     link: "https://moti-quo.vercel.app/",
     date: "2025",
@@ -47,8 +59,7 @@ export const PROJECTS = [
     title: "Timer ",
     image: Timer1,
     image2: Timer2,
-    description:
-      "A timer app that lets users set a custom countdown, pause/resume the timer, and restart it with a preset 15-minute duration. It also features a responsive display and a light/dark mode toggle for an enhanced user experience.",
+    description: "Timer Web App",
     technologies: ["React", "Tailwind", "Vite"],
     link: "https://timer-blush-one.vercel.app/",
     date: "2025",
@@ -56,10 +67,9 @@ export const PROJECTS = [
   {
     title: "GlazingGorillas",
     image: GGG,
-    description:
-      " Responsive website that tracks concurrent users, total visits, and game details using Roblox API",
+    description: "Landing Website",
     technologies: ["React", "Tailwind", "Vite"],
-    link: "https://glazinggorillagames.com/",
+    link: "https://ggweb-chi.vercel.app/",
     date: "2024",
   },
 
@@ -67,10 +77,36 @@ export const PROJECTS = [
     title: "EdgeHacks",
     image: EdgeHacks2,
     image2: EdgeHacks2,
-    description:
-      "Responsive website for EdgeHacks, non-profit hackathon with 100+ participants.",
+    description: "Hackathon Website",
     technologies: ["HTML", "CSS"],
     link: "https://justinlam6.github.io/EdgeHacks/",
+    date: "2023",
+  },
+  {
+    title: "Consume",
+    image: ClashRoyale,
+    image2: EdgeHacks2,
+    description: "Clash Royale Bundle",
+    technologies: ["HTML", "CSS"],
+
+    date: "2023",
+  },
+  {
+    title: "Consume",
+    image: Gru,
+    image2: EdgeHacks2,
+    description: "Gru Bundle",
+    technologies: ["HTML", "CSS"],
+
+    date: "2023",
+  },
+  {
+    title: "Consume",
+    image: Batman,
+    image2: EdgeHacks2,
+    description: "Batman Bundle",
+    technologies: ["HTML", "CSS"],
+
     date: "2023",
   },
 ];
