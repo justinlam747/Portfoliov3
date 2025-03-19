@@ -24,6 +24,11 @@ const App = () => {
     };
   }, []);
 
+  const loadingScreen = () => {
+    if (isScrolled) {
+    }
+  };
+
   return (
     <div className="bg-black">
       <Navbar isScrolled={isScrolled} />
