@@ -1,4 +1,4 @@
-import GGG from "../assets/projects/consume.png";
+import GGG from "../assets/projects/GGGs.png";
 import EdgeHacks from "../assets/projects/edgeHacks.png";
 import EdgeHacks2 from "../assets/projects/EdgeHacks2.png";
 import Timer1 from "../assets/projects/timer1.png";
@@ -38,6 +38,14 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "GlazingGorillas",
+    image: GGG,
+    description: "Landing Website",
+    technologies: ["React", "Tailwind", "Vite"],
+    link: "https://ggweb-chi.vercel.app/",
+    date: "2024",
+  },
+  {
     title: "WaterYouDoing",
     image: Plant,
 
@@ -64,14 +72,7 @@ export const PROJECTS = [
     link: "https://timer-blush-one.vercel.app/",
     date: "2025",
   },
-  {
-    title: "GlazingGorillas",
-    image: GGG,
-    description: "Landing Website",
-    technologies: ["React", "Tailwind", "Vite"],
-    link: "https://ggweb-chi.vercel.app/",
-    date: "2024",
-  },
+ 
 
   {
     title: "EdgeHacks",
@@ -82,33 +83,7 @@ export const PROJECTS = [
     link: "https://justinlam6.github.io/EdgeHacks/",
     date: "2023",
   },
-  {
-    title: "Consume",
-    image: ClashRoyale,
-    image2: EdgeHacks2,
-    description: "Clash Royale Bundle",
-    technologies: ["HTML", "CSS"],
 
-    date: "2023",
-  },
-  {
-    title: "Consume",
-    image: Gru,
-    image2: EdgeHacks2,
-    description: "Gru Bundle",
-    technologies: ["HTML", "CSS"],
-
-    date: "2023",
-  },
-  {
-    title: "Consume",
-    image: Batman,
-    image2: EdgeHacks2,
-    description: "Batman Bundle",
-    technologies: ["HTML", "CSS"],
-
-    date: "2023",
-  },
 ];
 
 export const CONTACT = {
