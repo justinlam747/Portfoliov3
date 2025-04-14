@@ -42,7 +42,7 @@ export const PROJECTS = [
     image: GGG,
     description: "Landing Website",
     technologies: ["React", "Tailwind", "Vite"],
-    link: "https://ggweb-chi.vercel.app/",
+    link: "https://glazinggorillagames.com/",
     date: "2024",
   },
   {
@@ -54,25 +54,6 @@ export const PROJECTS = [
     link: "https://devpost.com/software/wateryoudoing-cjnzhp",
     date: "2023",
   },
-  {
-    title: "MotiQuo",
-    image: Moti1,
-    image2: Moti2,
-    description: "Motivational Quote Generator",
-    technologies: ["React", "Tailwind", "Vite", "ZenQuotesAPI"],
-    link: "https://moti-quo.vercel.app/",
-    date: "2025",
-  },
-  {
-    title: "Timer ",
-    image: Timer1,
-    image2: Timer2,
-    description: "Timer Web App",
-    technologies: ["React", "Tailwind", "Vite"],
-    link: "https://timer-blush-one.vercel.app/",
-    date: "2025",
-  },
- 
 
   {
     title: "EdgeHacks",
@@ -83,7 +64,6 @@ export const PROJECTS = [
     link: "https://justinlam6.github.io/EdgeHacks/",
     date: "2023",
   },
-
 ];
 
 export const CONTACT = {
